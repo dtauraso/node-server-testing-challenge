@@ -14,11 +14,17 @@ async function insert(hobbit) {
 }
 
 async function update(id, changes) {
-  return null;
+  return db('hobbits')
+    .where('id', id)
+    .update(changes)
+  // return null;
 }
 
 function remove(id) {
-  return null;
+  return db('hobbits')
+    .where('id', '=', id)
+    .del()
+  // return null;
 }
 
 function getAll() {
@@ -26,5 +32,7 @@ function getAll() {
 }
 
 function findById(id) {
-  return null;
+  return db('hobbits')
+    .where('id', id)
+  // return null;
 }
